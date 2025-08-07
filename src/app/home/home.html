@@ -1,1 +1,127 @@
-<p>home works!</p>
+<main>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <h1 class="hero-title">Stay Comfortably Like Your Home</h1>
+        <p class="hero-subtitle">Lorem ipsum dolor sit amet consectetur adipiscing elit</p>
+        <button class="hero-btn">Get Started</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about-section">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-image">
+          <img src="assets/about.png" alt="Care giver with elderly patient">
+        </div>
+        <div class="about-content">
+          <h2 class="section-title">About Us</h2>
+          <p class="about-text">
+            Lorem ipsum dolor sit amet consectetur. Augue non molestudis placerat faucibus nam purus sem. Urna purus porttitor dignissim congue pellentesque ac hac.
+          </p>
+          <ul class="about-features">
+            <li>Quality care with personalized attention</li>
+            <li>Quality care with personalized attention</li>
+            <li>Quality care with personalized attention</li>
+            <li>Supporting peace of mind in care and freedom of choice</li>
+          </ul>
+          <button class="learn-more-btn">Learn More</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="services-section">
+    <div class="container">
+      <h2 class="section-title centered">Our Services</h2>
+      <div class="services-grid">
+<!--        <div *ngFor="let service of services" class="service-card">-->
+<!--          <div class="service-icon">-->
+<!--            <i class="icon-{{ service.icon }}"></i>-->
+<!--          </div>-->
+<!--          <h3 class="service-title">{{ service.title }}</h3>-->
+<!--          <p class="service-description">{{ service.description }}</p>-->
+<!--        </div>-->
+
+        @for (service of services; track service) {
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="icon-{{ service.icon }}"></i>
+            </div>
+            <h3 class="service-title">{{ service.title }}</h3>
+            <p class="service-description">{{ service.description }}</p>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Reviews Section -->
+  <section class="reviews-section">
+    <div class="container">
+      <h2 class="section-title centered">Client Reviews</h2>
+      <div class="reviews-container">
+<!--        <div *ngFor="let review of reviews" class="review-card">-->
+<!--          <div class="quote-icon">"</div>-->
+<!--          <p class="review-text">{{ review.text }}</p>-->
+<!--          <div class="review-author">-->
+<!--            <img src="Assets/author.png" alt="Author" class="author-avatar">-->
+<!--            <div class="author-info">-->
+<!--              <h4 class="author-name">{{ review.author }}</h4>-->
+<!--              <p class="author-role">{{ review.role }}</p>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+
+        @for (review of reviews; track review) {
+          <div class="review-card">
+            <div class="quote-icon">"</div>
+            <p class="review-text">{{review.text}}</p>
+            <div class="review-author">
+              <img src="assets/author.png" alt="Author" class="author-avatar">
+              <div class="author-info">
+                <h4 class="author-name">{{ review.author }}</h4>
+                <p class="author-role">{{ review.role }}</p>
+              </div>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-grid">
+        <div class="cta-content">
+          <h2 class="cta-title">The Best Elderly Care Center For You</h2>
+          <p class="cta-text">
+            Lorem ipsum dolor sit amet consectetur. Augue non molestudis placerat faucibus nam purus sem. Urna purus porttitor dignissim congue pellentesque ac hac. Viverra donec nullus ut tellurn pellenteum donec rhoncus dolor. Eu adipiscing molesta ut orci rhoncus ante blandum ac in. Augue non molestudis placerat faucibus nam purus sem.
+          </p>
+          <button class="cta-btn">Learn More</button>
+        </div>
+        <div class="cta-image">
+          <img src="assets/cta-image.png" alt="Elderly care">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA Section -->
+  <section class="final-cta">
+    <div class="container">
+      <div class="final-cta-content">
+        <h2 class="final-cta-title">Looking for a Better Care?</h2>
+        <p class="final-cta-text">
+          Lorem ipsum dolor sit amet consectetur. Augue non molestudis placerat faucibus nam purus sem. Urna purus porttitor dignissim congue pellentesque ac hac.
+        </p>
+        <button class="final-cta-btn">Call Today</button>
+      </div>
+    </div>
+  </section>
+</main>

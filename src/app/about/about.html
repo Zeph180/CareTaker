@@ -1,1 +1,62 @@
-<p>about works!</p>
+<main>
+  <!-- Hero Section -->
+  <section class="page-hero">
+    <div class="container">
+      <h1 class="page-title">About Us</h1>
+    </div>
+  </section>
+
+  <!-- Mission Statement -->
+  <section class="mission-section">
+    <div class="container">
+      <div class="mission-grid">
+        <div class="mission-content">
+          <h2 class="section-title">Mission Statement</h2>
+          <p class="mission-text">
+            Lorem ipsum dolor sit amet consectetur. Augue non molestudis placerat faucibus nam purus sem. Urna purus porttitor dignissim congue pellentesque ac hac. Viverra donec nullus ut tellurn pellenteum donec rhoncus dolor. Eu adipiscing molesta ut orci rhoncus ante blandum ac in. Augue non molestudis placerat faucibus nam purus sem.
+          </p>
+        </div>
+        <div class="mission-image">
+          <img src="Assets/mission-team.jpg" alt="Healthcare team">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- History Timeline -->
+  <section class="timeline-section">
+    <div class="container">
+      <h2 class="section-title">History of the home</h2>
+      <div class="timeline">
+        <div *ngFor="let item of timeline" class="timeline-item">
+          <div class="timeline-year">{{ item.year }}</div>
+          <div class="timeline-content">
+            <h3 class="timeline-title">{{ item.title }}</h3>
+            <p class="timeline-description">{{ item.description }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Care Givers -->
+  <section class="caregivers-section">
+    <div class="container">
+      <h2 class="section-title centered">Meet Our Care Givers</h2>
+      <div class="caregivers-grid">
+        @for (caregiver of careGivers; track caregiver) {
+          <div class="caregivers-card">
+            <div class="caregiver-image">
+              <img [src]="'assets/' + caregiver.image" [alt]="caregiver.name">
+            </div>
+            <h3 class="caregiver-name">{{ caregiver.name }}</h3>
+            <p class="caregiver-role">{{ caregiver.role }}</p>
+            <p class="caregiver-description">
+              Lorem ipsum dolor sit amet consectetur. Augue non molestudis placerat faucibus nam purus sem. Urna purus porttitor dignissim congue pellentesque ac hac.
+            </p>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+</main>
