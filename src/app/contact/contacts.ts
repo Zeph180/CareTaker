@@ -1,36 +1,26 @@
 import { Component } from '@angular/core';
 import {FormsModule, NgForm} from '@angular/forms';
+import {NgClass} from '@angular/common';
 
 @Component({
   selector: 'app-contacts',
   imports: [
-    FormsModule
+    FormsModule,
+    NgClass
   ],
   templateUrl: './contacts.html',
   styleUrl: './contacts.css'
 })
 export class Contacts {
-  isSubmitting = false;
-  isSubmitted = false;
-  submitError = '';
-
-  contactInfo = {
-    phone: '+1 (555) 123-4567',
-    email: 'info@carehome.com',
-    address: '123 Care Street, Health City, HC 12345',
-    hours: 'Monday - Friday: 8:00 AM - 6:00 PM'
-  };
-
-  formData = {
+  contactForm = {
     name: '',
     email: '',
     phone: '',
-    subject: '',
-    message: '',
-    serviceInterest: ''
+    service: '',
+    message: ''
   };
 
-  serviceOptions = [
+  services = [
     'Resident Care',
     'Elderly Nutrition',
     'Skilled Nursing',
@@ -38,56 +28,57 @@ export class Contacts {
     'General Inquiry'
   ];
 
-  async onSubmit(form: NgForm) {
-    if (form.valid) {
-      this.isSubmitting = true;
-      this.submitError = '';
+  isSubmitting = false;
+  submitMessage = '';
 
-      try {
-        // Replace 'YOUR_FORMSPREE_ID' with your actual Formspree form ID
-        const response = await fetch('https://formspree.io/f/YOUR_FORMSPREE_ID', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify({
-            name: this.formData.name,
-            email: this.formData.email,
-            phone: this.formData.phone,
-            subject: this.formData.subject,
-            message: this.formData.message,
-            serviceInterest: this.formData.serviceInterest,
-            _replyto: this.formData.email
-          })
-        });
+  onSubmit() {
+    this.isSubmitting = true;
+    this.submitMessage = '';
 
-        if (response.ok) {
-          this.isSubmitted = true;
-          this.resetForm();
-        } else {
-          throw new Error('Failed to send message');
-        }
-      } catch (error) {
-        this.submitError = 'Failed to send message. Please try again.';
-      } finally {
-        this.isSubmitting = false;
-      }
+    // Basic form validation
+    if (!this.contactForm.name || !this.contactForm.email || !this.contactForm.message) {
+      this.submitMessage = 'Please fill in all required fields.';
+      this.isSubmitting = false;
+      return;
     }
+
+    // Create FormData for Formspree
+    const formData = new FormData();
+    formData.append('name', this.contactForm.name);
+    formData.append('email', this.contactForm.email);
+    formData.append('phone', this.contactForm.phone);
+    formData.append('service', this.contactForm.service);
+    formData.append('message', this.contactForm.message);
+
+    // Submit to Formspree (replace YOUR_FORM_ID with your actual Formspree form ID)
+    fetch('https://formspree.io/f/YOUR_FORM_ID', {
+      method: 'POST',
+      body: formData,
+      headers: {
+        'Accept': 'application/json'
+      }
+    }).then(response => {
+      if (response.ok) {
+        this.submitMessage = 'Thank you for your message! We\'ll get back to you soon.';
+        this.resetForm();
+      } else {
+        this.submitMessage = 'Sorry, there was an error sending your message. Please try again.';
+      }
+    }).catch(error => {
+      console.error('Error:', error);
+      this.submitMessage = 'Sorry, there was an error sending your message. Please try again.';
+    }).finally(() => {
+      this.isSubmitting = false;
+    });
   }
 
   resetForm() {
-    this.formData = {
+    this.contactForm = {
       name: '',
       email: '',
       phone: '',
-      subject: '',
-      message: '',
-      serviceInterest: ''
+      service: '',
+      message: ''
     };
-  }
-
-  resetSubmission() {
-    this.isSubmitted = false;
-    this.submitError = '';
   }
 }
