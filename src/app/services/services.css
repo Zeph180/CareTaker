@@ -8,19 +8,30 @@
 
 /* Banner */
 .banner {
-    background: url('/images/banner.jpg') center/cover no-repeat;
-    padding: 60px 20px;
-    color: white;
+    padding: 2px 50px;
     text-align: left;
+    color: white;
+    /* position: absolute;
+    width: 1440px;
+    height: 400px;
+    left: 0px;
+    top: 100px; */
 }
 
 .banner-inner {
     max-width: var(--max-width);
     margin: 0 auto;
+    /* background: url('/images/banner.jpg') center/cover no-repeat; */
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('/images/banner.jpg');
+    padding: 80px 20px;
+    border-radius: 8px;
+    width: 1440px;
+    height: 200px;
+    /* optional, to soften edges */
 }
 
 .banner h1 {
-    font-size: 36px;
+    font-size: 40px;
     margin: 0 0 8px;
 }
 
@@ -34,38 +45,70 @@
     max-width: var(--max-width);
     margin: 40px auto;
     padding: 0 20px;
+    margin-left: 20px;
 }
 
 .service {
     display: flex;
-    gap: 24px;
+    gap: 20px;
+    /* Reduce gap between columns */
     align-items: flex-start;
-    padding: 26px 0;
+    padding: 30px 0;
+    /* Slightly less vertical padding */
     border-bottom: 1px solid #eee;
 }
 
 .service-text {
     flex: 1 1 70%;
+    /* Give more flexible space but less than before */
+    min-width: 0;
+    /* Allow text to shrink if needed */
+    font-family: Raleway;
+}
+
+.service-offerings {
+    flex: 1 1 30%;
+    /* Make offerings flexible instead of fixed width */
+    min-width: 180px;
+    /* Minimum so it doesn’t get too narrow */
 }
 
 .service-text h2 {
     margin: 0 0 8px;
-    font-size: 20px;
-    color: #0b6b4a;
+    font-size: 48px;
+    line-height: 58px;
+    font-style: normal;
+    font-weight: 700;
+    color: #262E27;
 }
 
 .service-text p {
-    margin: 0;
-    color: var(--muted);
+    width: 800px;
+    height: 52px;
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 26px;
+    color: #848484
 }
 
 .service-offerings {
-    width: 260px;
+    width: 250px;
 }
 
 .service-offerings h4 {
-    margin: 0 0 8px;
-    font-size: 16px;
+    font-family: 'General Sans';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 32px;
+        line-height: 28px;
+        /* identical to box height, or 88% */
+        color: #262E27;
+        /* Inside auto layout */
+        flex: none;
+        order: 0;
+        flex-grow: 0;
 }
 
 .service-offerings ul {
@@ -75,7 +118,23 @@
 }
 
 .service-offerings li {
-    margin-bottom: 6px;
+    width: 246px;
+    height: 28px;
+    
+        font-family: 'General Sans';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 28px;
+        /* identical to box height, or 156% */
+    
+        color: #262E27;
+    
+    
+        /* Inside auto layout */
+        flex: none;
+        order: 1;
+        flex-grow: 0;
 }
 
 /* Cards (dietary and recreation) */
@@ -85,20 +144,55 @@
     background: #fafafa;
 }
 
-.dietary h2,
+.dietary h2 {
+    width: 371px;
+        height: 58px;
+    
+        font-family: 'Raleway';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 48px;
+        line-height: 58px;
+        /* identical to box height, or 121% */
+    
+        color: #262E27;
+    
+    
+        /* Inside auto layout */
+        flex: none;
+        order: 0;
+        flex-grow: 0;
+}
+
 .recreation h2 {
-    max-width: var(--max-width);
-    margin: 0 auto 18px;
-    padding: 0 20px;
-    color: #0b6b4a;
+    width: 763px;
+        height: 56px;
+        font-family: 'Raleway';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 48px;
+        line-height: 56px;
+        color: #262E27;
+        /* Inside auto layout */
+        flex: none;
+        order: 0;
+        flex-grow: 0;
+
 }
 
 .cards {
+flex: none;
+    order: 1;
+    flex-grow: 0;
+    /* Frame 1383 */
+    /* Auto layout */
     display: flex;
-    gap: 20px;
-    max-width: var(--max-width);
-    margin: 0 auto;
-    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 5px;
+    gap: 24px;
+    width: 1440px;
+    height: 180px;
 }
 
 .card {
@@ -109,11 +203,12 @@
     overflow: hidden;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
     text-align: left;
+    
 }
 
 .card img {
     width: 100%;
-    height: 160px;
+    height: 180px;
     object-fit: cover;
     display: block;
 }
@@ -132,9 +227,12 @@
 
 /* Footer */
 .site-footer {
-    background: var(--accent);
-    padding: 36px 20px 12px;
+    background: #F3FBF4;
+    padding: 100px 20px 12px;
     color: #0b6b4a;
+    bottom: 0px;
+    height: 500px;
+    margin-top: 48px;
 }
 
 .footer-inner {
@@ -148,7 +246,15 @@
 }
 
 .footer-left {
-    flex: 1 1 40%;
+    display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0px;
+        gap: 20px;
+        width: 395px;
+        height: 233.75px;
+        left: 100px;
+        top: 88px;
 }
 
 .logo {
@@ -159,10 +265,14 @@
 }
 
 .footer-left .desc {
-    color: #2f6c56;
-    max-width: 360px;
-    margin-bottom: 12px;
-    font-size: 14px;
+    width: 395px;
+        height: 104px;
+    
+        font-family: 'Raleway';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 26px;
 }
 
 .socials img {
@@ -173,9 +283,12 @@
 
 .footer-columns {
     display: flex;
-    gap: 28px;
+    gap: 20px;
     flex: 1 1 60%;
     justify-content: flex-end;
+    width: 109px;
+    height: 199px;
+    left: 900px;
 }
 
 .col h4 {
