@@ -7,39 +7,37 @@ import {CommonModule, NgOptimizedImage} from '@angular/common';
     CommonModule,
   ],
   templateUrl: './about.html',
+  standalone: true,
   styleUrl: './about.css'
 })
 export class About {
   timeline = [
     {
       year: 1990,
-      title: 'New Beginning',
-      description: 'Lorem ipsum dolor sit amet consectetur. Augue non molestudis placerat faucibus nam purus sem. Urna purus porttitor dignissim congue pellentesque ac hac. Viverra donec nulls ut tellum pellenteum donec rhoncus dolor. Eu adipiscing molesta ut orci rhoncus ante blandum ac in. Augue non molestudis placerat faucibus nam purus sem.'
+      title: 'A New Beginning',
+      description: 'Founded with a vision to provide compassionate and personalized elderly care, we started our journey dedicated to enhancing the lives of seniors.'
     },
     {
       year: 2000,
-      title: 'Residence Expand',
-      description: 'Lorem ipsum dolor sit amet consectetur. Augue non molestudis placerat faucibus nam purus sem. Urna purus porttitor dignissim congue pellentesque ac hac. Viverra donec nulls ut tellum pellenteum donec rhoncus dolor. Eu adipiscing molesta ut orci rhoncus ante blandum ac in. Augue non molestudis placerat faucibus nam purus sem.'
+      title: 'Residence Expansion',
+      description: 'We expanded our facilities to offer more comfortable living spaces, creating a welcoming home-like environment for more residents.'
     },
     {
       year: 2010,
-      title: 'Home Care Service Started',
-      description: 'Lorem ipsum dolor sit amet consectetur. Augue non molestudis placerat faucibus nam purus sem. Urna purus porttitor dignissim congue pellentesque ac hac. Viverra donec nulls ut tellum pellenteum donec rhoncus dolor. Eu adipiscing molesta ut orci rhoncus ante blandum ac in. Augue non molestudis placerat faucibus nam purus sem.'
+      title: 'Home Care Services Launched',
+      description: 'Introducing professional in-home care services to support seniors who prefer to stay in the comfort of their own homes.'
     },
     {
       year: 2020,
-      title: 'Country Wide Coverage',
-      description: 'Lorem ipsum dolor sit amet consectetur. Augue non molestudis placerat faucibus nam purus sem. Urna purus porttitor dignissim congue pellentesque ac hac. Viverra donec nulls ut tellum pellenteum donec rhoncus dolor. Eu adipiscing molesta ut orci rhoncus ante blandum ac in. Augue non molestudis placerat faucibus nam purus sem.'
+      title: 'Countrywide Coverage',
+      description: 'Extended our reach to serve families across the country, bringing trusted care and support to more communities than ever before.'
     }
   ];
+
   careGivers = [
     { name: 'John Doe', role: 'Staff Designation', image: 'maleNurse.png' },
     { name: 'John Doe', role: 'Staff Designation', image: 'femaleNurse.png' },
     { name: 'John Doe', role: 'Staff Designation', image: 'maleNurse.png' },
     { name: 'John Doe', role: 'Staff Designation', image: 'femaleNurse.png' },
-    { name: 'John Doe', role: 'Staff Designation', image: 'maleNurse.png' },
-    { name: 'John Doe', role: 'Staff Designation', image: 'femaleNurse.png' },
-    { name: 'John Doe', role: 'Staff Designation', image: 'femaleNurse.png' },
-    { name: 'John Doe', role: 'Staff Designation', image: 'maleNurse.png' }
   ];
 }

@@ -9,6 +9,7 @@ import {CommonModule} from '@angular/common';
     RouterLink
   ],
   templateUrl: './header.html',
+  standalone: true,
   styleUrl: './header.css'
 })
 export class Header {
@@ -18,6 +19,5 @@ export class Header {
     { label: 'Services', route: '/services' },
     { label: 'Amenities', route: '/amenities' },
     { label: 'Contact Us', route: '/contact-us' }
-
   ];
 }

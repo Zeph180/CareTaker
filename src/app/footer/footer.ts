@@ -8,11 +8,19 @@ import {CommonModule} from '@angular/common';
     CommonModule,
   ],
   templateUrl: './footer.html',
+  standalone: true,
   styleUrl: './footer.css'
 })
 export class Footer {
-  quickLinks = ['Home', 'About', 'Portfolio', 'Services'];
+  quickLinks = [
+    { label: 'Home', route: '/', active: true },
+    { label: 'About', route: '/about' },
+    { label: 'Services', route: '/services' },
+    { label: 'Contact Us', route: '/contact-us' }
+  ];
+
   legalLinks = ['Terms of Service', 'Privacy Policy'];
+
   socialLinks = [
     { icon: 'facebook', url: '#' },
     { icon: 'twitter', url: '#' },

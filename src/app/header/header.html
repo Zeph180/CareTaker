@@ -2,9 +2,18 @@
   <div class="container">
     <div class="nav-wrapper">
       <div class="logo">
-        <img src="assets/logo.svg" alt="Care Home" class="logo-img">
-        <span class="logo-text">Care Home</span>
+        <a routerLink="/">
+          <img
+            src="assets/logo.svg"
+            alt="Care Home"
+            class="logo-img"
+            width="200"
+            height="100"
+          />
+          <span class="logo-text"></span>
+        </a>
       </div>
+
       <nav class="main-nav">
         <ul class="nav-list">
           @for (item of navItems; track item) {
@@ -14,7 +23,9 @@
           }
         </ul>
       </nav>
-      <button class="contact-btn">Contact Us</button>
+      <a routerLink="/contact-us">
+        <button class="contact-btn">Contact Us</button>
+      </a>
     </div>
   </div>
 </header>

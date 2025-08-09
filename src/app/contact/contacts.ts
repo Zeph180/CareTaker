@@ -9,6 +9,7 @@ import {NgClass} from '@angular/common';
     NgClass
   ],
   templateUrl: './contacts.html',
+  standalone: true,
   styleUrl: './contacts.css'
 })
 export class Contacts {
@@ -50,8 +51,7 @@ export class Contacts {
     formData.append('service', this.contactForm.service);
     formData.append('message', this.contactForm.message);
 
-    // Submit to Formspree (replace YOUR_FORM_ID with your actual Formspree form ID)
-    fetch('https://formspree.io/f/YOUR_FORM_ID', {
+    fetch('https://formspree.io/f/xovlyenv', {
       method: 'POST',
       body: formData,
       headers: {

@@ -4,6 +4,7 @@ import { Component } from '@angular/core';
   selector: 'app-home',
   imports: [],
   templateUrl: './home.html',
+  standalone: true,
   styleUrl: './home.css'
 })
 export class Home {
@@ -11,28 +12,25 @@ export class Home {
     {
       icon: 'resident-care',
       title: 'Resident Care',
-      description: 'Lorem ipsum dolor sit amet consectetur. Augue non molestudris placerat faucibus nam purus sem. Urna purus porttitor dignissim congue pellentesque ac hac.'
+      description: 'Personalized daily assistance in a warm, homelike environment. From grooming to companionship, we ensure every resident feels valued and cared for.'
     },
     {
       icon: 'elderly-nutrition',
       title: 'Elderly Nutrition',
-      description: 'Lorem ipsum dolor sit amet consectetur. Augue non molestudris placerat faucibus nam purus sem. Urna purus porttitor dignissim congue pellentesque ac hac.'
+      description: 'Nutritious, chef-prepared meals tailored to individual health needs, promoting wellness, energy, and enjoyment at every mealtime.'
     },
     {
       icon: 'skilled-nursing',
       title: 'Skilled Nursing',
-      description: 'Lorem ipsum dolor sit amet consectetur. Augue non molestudris placerat faucibus nam purus sem. Urna purus porttitor dignissim congue pellentesque ac hac.'
-    },
-    {
-      icon: 'caring-staff',
-      title: 'Caring Staff',
-      description: 'Lorem ipsum dolor sit amet consectetur. Augue non molestudris placerat faucibus nam purus sem. Urna purus porttitor dignissim congue pellentesque ac hac.'
+      description: 'Professional medical support delivered with compassion, ensuring residents receive expert care for both short-term recovery and long-term health.'
     }
   ];
 
   reviews = [
     {
-      text: 'Lorem ipsum dolor sit amet consectetur. Amet ied tellus elementum neque. Lorem molestud aput tellus risus quis nam turpis natoque ullamcor. Adipiscing pellentesque ut tortor eorum et pulvinar nullam. Porttitor lacus sit amet mi consectetur nullam commodo tellus lorem.',
+      text: 'Quin’s Care has been a blessing for our family. The staff treat my mother with such kindness and respect,' +
+        ' and she feels truly at home here. Their attention to detail, from her daily care to the little moments of joy, ' +
+        'gives me peace of mind every day.',
       author: 'James Smith',
       role: 'Son Of Clarence'
     }

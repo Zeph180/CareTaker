@@ -3,8 +3,8 @@
   <section class="hero">
     <div class="container">
       <div class="hero-content">
-        <h1 class="hero-title">Stay Comfortably Like Your Home</h1>
-        <p class="hero-subtitle">Lorem ipsum dolor sit amet consectetur adipiscing elit</p>
+        <h1 class="hero-title">Comfort & Care, Just Like Home</h1>
+        <p class="hero-subtitle">Where compassion, dignity, and safety come first for your loved ones.</p>
         <button class="hero-btn">Get Started</button>
       </div>
     </div>
@@ -39,14 +39,6 @@
     <div class="container">
       <h2 class="section-title centered">Our Services</h2>
       <div class="services-grid">
-<!--        <div *ngFor="let service of services" class="service-card">-->
-<!--          <div class="service-icon">-->
-<!--            <i class="icon-{{ service.icon }}"></i>-->
-<!--          </div>-->
-<!--          <h3 class="service-title">{{ service.title }}</h3>-->
-<!--          <p class="service-description">{{ service.description }}</p>-->
-<!--        </div>-->
-
         @for (service of services; track service) {
           <div class="service-card">
             <div class="service-icon">
@@ -65,18 +57,6 @@
     <div class="container">
       <h2 class="section-title centered">Client Reviews</h2>
       <div class="reviews-container">
-<!--        <div *ngFor="let review of reviews" class="review-card">-->
-<!--          <div class="quote-icon">"</div>-->
-<!--          <p class="review-text">{{ review.text }}</p>-->
-<!--          <div class="review-author">-->
-<!--            <img src="Assets/author.png" alt="Author" class="author-avatar">-->
-<!--            <div class="author-info">-->
-<!--              <h4 class="author-name">{{ review.author }}</h4>-->
-<!--              <p class="author-role">{{ review.role }}</p>-->
-<!--            </div>-->
-<!--          </div>-->
-<!--        </div>-->
-
         @for (review of reviews; track review) {
           <div class="review-card">
             <div class="quote-icon">"</div>
@@ -101,7 +81,11 @@
         <div class="cta-content">
           <h2 class="cta-title">The Best Elderly Care Center For You</h2>
           <p class="cta-text">
-            Lorem ipsum dolor sit amet consectetur. Augue non molestudis placerat faucibus nam purus sem. Urna purus porttitor dignissim congue pellentesque ac hac. Viverra donec nullus ut tellurn pellenteum donec rhoncus dolor. Eu adipiscing molesta ut orci rhoncus ante blandum ac in. Augue non molestudis placerat faucibus nam purus sem.
+            At <b>Quin’s Care</b>, we believe seniors deserve more than just care — they deserve comfort,
+            dignity, and a true sense of belonging. Our warm, welcoming center offers personalized support,
+            from daily assistance and medical care to friendly companionship and engaging activities.
+            With professionalism, compassion, and a genuine passion for elder care,
+            we ensure your <b> loved one’s comfort, safety, and happiness </b> every day.
           </p>
           <button class="cta-btn">Learn More</button>
         </div>
@@ -118,7 +102,9 @@
       <div class="final-cta-content">
         <h2 class="final-cta-title">Looking for a Better Care?</h2>
         <p class="final-cta-text">
-          Lorem ipsum dolor sit amet consectetur. Augue non molestudis placerat faucibus nam purus sem. Urna purus porttitor dignissim congue pellentesque ac hac.
+          Because Every Moment Matters. ❤️
+          Give your loved one the comfort, safety, and compassion they deserve starting today.
+          Our dedicated caregivers are here to make every day brighter, healthier, and more fulfilling.
         </p>
         <button class="final-cta-btn">Call Today</button>
       </div>
