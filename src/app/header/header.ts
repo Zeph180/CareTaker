@@ -17,7 +17,7 @@ export class Header {
     { label: 'About Us', route: '/about' },
     { label: 'Services', route: '/services' },
     { label: 'Amenities', route: '/amenities' },
-    { label: 'Cost & Payment', route: '/cost-payment' }
+    { label: 'Contact Us', route: '/contacts' }
 
   ];
 }

@@ -1,1 +1,206 @@
-<p>contacts works!</p>
+<main>
+  <!-- Hero Section -->
+  <section class="page-hero">
+    <div class="container">
+      <h1 class="page-title">Contact Us</h1>
+      <p class="page-subtitle">Get in touch with our caring team</p>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact-section">
+    <div class="container">
+      <div class="contact-grid">
+        <!-- Contact Information -->
+        <div class="contact-info">
+          <h2 class="contact-info-title">Get In Touch</h2>
+          <p class="contact-info-text">
+            We're here to help and answer any questions you might have.
+            We look forward to hearing from you.
+          </p>
+
+          <div class="contact-details">
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="icon-phone"></i>
+              </div>
+              <div class="contact-text">
+                <h4>Phone</h4>
+                <p>{{ contactInfo.phone }}</p>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="icon-email"></i>
+              </div>
+              <div class="contact-text">
+                <h4>Email</h4>
+                <p>{{ contactInfo.email }}</p>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="icon-location"></i>
+              </div>
+              <div class="contact-text">
+                <h4>Address</h4>
+                <p>{{ contactInfo.address }}</p>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="icon-clock"></i>
+              </div>
+              <div class="contact-text">
+                <h4>Hours</h4>
+                <p>{{ contactInfo.hours }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="contact-form-container">
+          <!-- Success Message -->
+          @if (isSubmitted) {
+            <div class="success-message">
+              <div class="success-icon">✓</div>
+              <h3>Thank You!</h3>
+              <p>Your message has been sent successfully. We'll get back to you soon.</p>
+              <button (click)="resetSubmission()" class="new-message-btn">Send Another Message</button>
+            </div>
+          }
+
+          <!-- Contact Form -->
+          @if (!isSubmitted) {
+            <form #contactForm="ngForm" (ngSubmit)="onSubmit(contactForm)" class="contact-form">
+              <h2 class="form-title">Send Us a Message</h2>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="name" class="form-label">Full Name *</label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    [(ngModel)]="formData.name"
+                    required
+                    class="form-input"
+                    placeholder="Enter your full name">
+                </div>
+
+                <div class="form-group">
+                  <label for="email" class="form-label">Email Address *</label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    [(ngModel)]="formData.email"
+                    required
+                    class="form-input"
+                    placeholder="Enter your email">
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="phone" class="form-label">Phone Number</label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    [(ngModel)]="formData.phone"
+                    class="form-input"
+                    placeholder="Enter your phone number">
+                </div>
+
+                <div class="form-group">
+                  <label for="serviceInterest" class="form-label">Service Interest</label>
+                  <select
+                    id="serviceInterest"
+                    name="serviceInterest"
+                    [(ngModel)]="formData.serviceInterest"
+                    class="form-select">
+                    <option value="">Select a service</option>
+                    @for (service of serviceOptions; track service) {
+                      <option [value]="service">
+                        {{ service }}
+                      </option>
+                    }
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="subject" class="form-label">Subject *</label>
+                <input
+                  type="text"
+                  id="subject"
+                  name="subject"
+                  [(ngModel)]="formData.subject"
+                  required
+                  class="form-input"
+                  placeholder="Enter message subject">
+              </div>
+
+              <div class="form-group">
+                <label for="message" class="form-label">Message *</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  [(ngModel)]="formData.message"
+                  required
+                  rows="5"
+                  class="form-textarea"
+                  placeholder="Tell us how we can help you..."></textarea>
+              </div>
+
+              <!-- Error Message -->
+              @if (submitError) {
+                <div class="error-message">{{submitError}}</div>
+              }
+
+              <!-- Submit Button -->
+              <button
+                type="submit"
+                [disabled]="contactForm.invalid || isSubmitting"
+                class="submit-btn">
+                @if (!isSubmitted) {
+                  <span>Send Message</span>
+                }
+                @else if (isSubmitting) {
+                  <span>Sending...</span>
+                }
+              </button>
+
+              <p class="form-note">
+                * Required fields. We respect your privacy and will never share your information.
+              </p>
+            </form>
+
+          }
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Additional Contact CTA -->
+  <section class="contact-cta">
+    <div class="container">
+      <div class="contact-cta-content">
+        <h2 class="contact-cta-title">Ready to Learn More?</h2>
+        <p class="contact-cta-text">
+          Our caring team is available to answer your questions and help you find the perfect care solution.
+        </p>
+        <div class="contact-cta-buttons">
+          <button class="cta-primary-btn">Schedule a Visit</button>
+          <button class="cta-secondary-btn">Call Now</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
