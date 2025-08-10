@@ -1,0 +1,227 @@
+.page-hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+        url('/assets/hero.png') center/cover;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    .container {
+        position: relative;
+        z-index: 2;
+    }
+
+    .page-title {
+        font-size: 3rem;
+        font-weight: 700;
+        color: white;
+        margin: 0;
+        text-align: left;
+    }
+}
+
+.indoor-section {
+    padding: 80px 0;
+    background: white;
+
+    .section-title {
+        text-align: left;
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: #2c3e50;
+        margin-bottom: 60px;
+    }
+
+    .indoor-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+        width: 1240px;
+        height: 350px;
+    }
+
+    .indoor-card {
+        background: white;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+        &:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .indoor-image {
+            height: 200px;
+            overflow: hidden;
+
+            .indoor-img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                transition: transform 0.3s ease;
+            }
+        }
+
+        &:hover .indoor-img {
+            transform: scale(1.05);
+        }
+
+        .indoor-content {
+            padding: 24px;
+
+            .indoor-title {
+                font-size: 1.3rem;
+                font-weight: 600;
+                color: #2c3e50;
+                margin-bottom: 12px;
+            }
+
+            .indoor-description {
+                font-size: 0.95rem;
+                color: #6c757d;
+                line-height: 1.6;
+                margin: 0;
+            }
+        }
+    }
+}
+
+
+.outdoor-section {
+    padding: 5px 0;
+    background: white;
+
+    .section-title {
+        text-align: left;
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: #2c3e50;
+        margin-bottom: 2rem;
+    }
+
+    .outdoor-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+        width: 1240px;
+        height: 350px;
+    }
+
+    .outdoor-card {
+        background: white;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+        &:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .outdoor-image {
+            height: 200px;
+            overflow: hidden;
+
+            .outdoor-img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                transition: transform 0.3s ease;
+            }
+        }
+
+        &:hover .outdoor-img {
+            transform: scale(1.05);
+        }
+
+        .outdoor-content {
+            padding: 24px;
+
+            .outdoor-title {
+                font-size: 1.3rem;
+                font-weight: 600;
+                color: #2c3e50;
+                margin-bottom: 12px;
+            }
+
+            .outdoor-description {
+                font-size: 0.95rem;
+                color: #6c757d;
+                line-height: 1.6;
+                margin: 0;
+            }
+        }
+    }
+}
+
+
+.commonareas-section {
+    padding: 5px 0;
+    background: white;
+
+    .section-title {
+        text-align: left;
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: #2c3e50;
+        margin-bottom: 2rem;
+    }
+
+    .commonareas-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+        width: 1240px;
+        height: 350px;
+    }
+
+    .commonareas-card {
+        background: white;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+        &:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .commonareas-image {
+            height: 200px;
+            overflow: hidden;
+
+            .outdoor-img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                transition: transform 0.3s ease;
+            }
+        }
+
+        &:hover .outdoor-img {
+            transform: scale(1.05);
+        }
+
+        .commonareas-content {
+            padding: 24px;
+
+            .commonareas-title {
+                font-size: 1.3rem;
+                font-weight: 600;
+                color: #2c3e50;
+                margin-bottom: 12px;
+            }
+
+            .commonareas-description {
+                font-size: 0.95rem;
+                color: #6c757d;
+                line-height: 1.6;
+                margin: 0;
+            }
+        }
+    }
+}
