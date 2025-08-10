@@ -1,11 +1,13 @@
 import { Component } from '@angular/core';
 import {literalMap} from '@angular/compiler';
 import {CommonModule} from '@angular/common';
+import {MatIconModule} from '@angular/material/icon';
 
 @Component({
   selector: 'app-footer',
   imports: [
     CommonModule,
+    MatIconModule
   ],
   templateUrl: './footer.html',
   standalone: true,
@@ -23,7 +25,7 @@ export class Footer {
 
   socialLinks = [
     { icon: 'facebook', url: '#' },
-    { icon: 'twitter', url: '#' },
+    { icon: 'x', url: '#' },
     { icon: 'instagram', url: '#' },
     { icon: 'linkedin', url: '#' }
   ];
