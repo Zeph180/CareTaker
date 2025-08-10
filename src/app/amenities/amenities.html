@@ -1,1 +1,89 @@
-<p>amenities works!</p>
+<main>
+    <!-- Hero Section -->
+    <section class="page-hero">
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <h1 class="page-title">Amenities</h1>
+        </div>
+    </section>
+
+    <!-- Indoor Section -->
+    <section class="indoor-section">
+        <div class="container">
+            <h2 class="section-title">Indoor</h2>
+            <div class="indoor-grid">
+                @for (indoorActivity of indoorActivities; track indoorActivity) {
+                <div class="indoor-card">
+                    <div class="indoor-image">
+                        <img [src]="'assets/' + indoorActivity.image" [alt]="indoorActivity.title" class="indoor-img">
+                    </div>
+                    <div class="indoor-content">
+                        <h3 class="indoor-title">{{ indoorActivity.title }}</h3>
+                        <p class="indoor-description">{{ indoorActivity.description }}</p>
+                    </div>
+                </div>
+                }
+            </div>
+        </div>
+    </section>
+
+    <!-- Oudoor Section -->
+    <section class="outdoor-section">
+        <div class="container">
+            <h2 class="section-title">Outdoor</h2>
+            <div class="outdoor-grid">
+                @for (outdoorActivity of outdoorActivities; track outdoorActivity) {
+                <div class="outdoor-card">
+                    <div class="outdoor-image">
+                        <img [src]="'assets/' + outdoorActivity.image" [alt]="outdoorActivity.title" class="outdoor-img">
+                    </div>
+                    <div class="outdoor-content">
+                        <h3 class="outdoor-title">{{ outdoorActivity.title }}</h3>
+                        <p class="outdoor-description">{{ outdoorActivity.description }}</p>
+                    </div>
+                </div>
+                }
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Common Areas -->
+    <section class="commonareas-section">
+        <div class="container">
+            <h2 class="section-title">Common Areas</h2>
+            <div class="commonareas-grid">
+                @for (commonArea of commonAreas; track commonArea) {
+                <div class="commonareas-card">
+                    <div class="commonareas-image">
+                        <img [src]="'assets/' + commonArea.image" [alt]="commonArea.title" class="commonareas-img">
+                    </div>
+                    <div class="commonareas-content">
+                        <h3 class="commonareas-title">{{ commonArea.title }}</h3>
+                        <p class="commonareas-description">{{ commonArea.description }}</p>
+                    </div>
+                </div>
+                }
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+<!-- Services Section -->
+<section class="services-section">
+    <div class="container">
+        <h2 class="section-title centered">Accessibility Features</h2>
+        <div class="services-grid">
+            @for (service of accessibility; track service) {
+            <div class="service-card">
+                <div class="service-icon">
+                    <img [src]="'assets/' + service.icon" [alt]="service.title">
+                </div>
+                <h3 class="service-title">{{ service.title }}</h3>
+                <p class="service-description">{{ service.description }}</p>
+            </div>
+            }
+        </div>
+    </div>
+</section>
+</main>

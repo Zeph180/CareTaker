@@ -1,0 +1,31 @@
+<header class="header">
+  <div class="container">
+    <div class="nav-wrapper">
+      <div class="logo">
+        <a routerLink="/">
+          <img
+            src="assets/logo.png"
+            alt="Care Home"
+            class="logo-img"
+            width="200"
+            height="100"
+          />
+          <span class="logo-text"></span>
+        </a>
+      </div>
+
+      <nav class="main-nav">
+        <ul class="nav-list">
+          @for (item of navItems; track item) {
+            <li class="nav-item">
+              <a [routerLink]="item.route" class="nav-link">{{ item.label }}</a>
+            </li>
+          }
+        </ul>
+      </nav>
+      <a routerLink="/contact-us">
+        <button class="contact-btn">Contact Us</button>
+      </a>
+    </div>
+  </div>
+</header>

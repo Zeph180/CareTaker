@@ -1,0 +1,324 @@
+.page-hero {
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+  url('/assets/hero.png') center/cover;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  position: relative;
+
+  .container {
+    position: relative;
+    z-index: 2;
+  }
+
+  .page-title {
+    font-size: 3rem;
+    font-weight: 700;
+    color: white;
+    margin: 0;
+    text-align: left;
+  }
+}
+
+.services-list {
+  padding: 80px 0;
+  background: #f8f9fa;
+
+  .service-section {
+    margin-bottom: 80px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .service-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+
+    &.reverse {
+      .service-content {
+        order: 2;
+      }
+      .service-offerings {
+        order: 1;
+      }
+    }
+  }
+
+  .service-content {
+    .service-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #2c3e50;
+      margin-bottom: 16px;
+    }
+
+    .service-description {
+      font-size: 1.1rem;
+      color: #6c757d;
+      line-height: 1.6;
+      margin-bottom: 32px;
+    }
+
+    .service-details-section {
+      .service-details-title {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: #2c3e50;
+        margin-bottom: 16px;
+      }
+
+      .service-details {
+        font-size: 1rem;
+        color: #6c757d;
+        line-height: 1.7;
+      }
+    }
+  }
+
+  .service-offerings {
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+
+    .offerings-title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #2c3e50;
+      margin-bottom: 24px;
+    }
+
+    .offerings-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      .offering-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 16px;
+        font-size: 1rem;
+        color: #495057;
+        line-height: 1.5;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+
+        .bullet {
+          color: #52c41a;
+          font-weight: bold;
+          margin-right: 12px;
+          font-size: 1.2rem;
+        }
+      }
+    }
+  }
+}
+
+.dietary-section {
+  padding: 80px 0;
+  background: white;
+
+  .section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 60px;
+  }
+
+  .dietary-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+  }
+
+  .meal-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+    }
+
+    .meal-image {
+      height: 200px;
+      overflow: hidden;
+
+      .meal-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+      }
+    }
+
+    &:hover .meal-img {
+      transform: scale(1.05);
+    }
+
+    .meal-content {
+      padding: 24px;
+
+      .meal-title {
+        font-size: 1.3rem;
+        font-weight: 600;
+        color: #2c3e50;
+        margin-bottom: 12px;
+      }
+
+      .meal-description {
+        font-size: 0.95rem;
+        color: #6c757d;
+        line-height: 1.6;
+        margin: 0;
+      }
+    }
+  }
+}
+
+.activities-section {
+  padding: 80px 0;
+  background: #f8f9fa;
+
+  .section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 60px;
+  }
+
+  .activities-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+  }
+
+  .activity-card {
+    position: relative;
+    height: 300px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: translateY(-8px);
+    }
+
+    .activity-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+
+      .activity-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .activity-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+      padding: 40px 24px 24px;
+      color: white;
+
+      .activity-title {
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin-bottom: 12px;
+      }
+
+      .activity-description {
+        font-size: 0.95rem;
+        line-height: 1.5;
+        margin: 0;
+        opacity: 0.9;
+      }
+    }
+  }
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+@media (max-width: 768px) {
+  .page-hero .page-title {
+    font-size: 2.5rem;
+  }
+
+  .services-list {
+    padding: 60px 0;
+
+    .service-grid {
+      grid-template-columns: 1fr;
+      gap: 40px;
+
+      &.reverse {
+        .service-content,
+        .service-offerings {
+          order: unset;
+        }
+      }
+    }
+
+    .service-content .service-title {
+      font-size: 2rem;
+    }
+
+    .service-offerings {
+      padding: 24px;
+    }
+  }
+
+  .dietary-section {
+    padding: 60px 0;
+
+    .section-title {
+      font-size: 2rem;
+      margin-bottom: 40px;
+    }
+
+    .dietary-grid {
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+  }
+
+  .activities-section {
+    padding: 60px 0;
+
+    .section-title {
+      font-size: 2rem;
+      margin-bottom: 40px;
+    }
+
+    .activities-grid {
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+
+    .activity-card {
+      height: 250px;
+    }
+  }
+}
