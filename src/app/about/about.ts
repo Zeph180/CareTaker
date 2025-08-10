@@ -35,9 +35,29 @@ export class About {
   ];
 
   careGivers = [
-    { name: 'John Doe', role: 'Staff Designation', image: 'maleNurse.png' },
-    { name: 'John Doe', role: 'Staff Designation', image: 'femaleNurse.png' },
-    { name: 'John Doe', role: 'Staff Designation', image: 'maleNurse.png' },
-    { name: 'John Doe', role: 'Staff Designation', image: 'femaleNurse.png' },
+    {
+      name: 'John Doe',
+      role: 'Senior Care Nurse',
+      image: 'maleNurse.png',
+      description: 'Experienced and compassionate nurse dedicated to providing personalized care and support to our residents.'
+    },
+    {
+      name: 'John Doe',
+      role: 'Certified Nursing Assistant',
+      image: 'femaleNurse.png',
+      description: 'Committed to ensuring comfort and dignity through attentive daily assistance and companionship.'
+    },
+    {
+      name: 'John Doe',
+      role: 'Physical Therapy Aide',
+      image: 'maleNurse.png',
+      description: 'Supports rehabilitation programs with patience and expertise to promote resident mobility and wellness.'
+    },
+    {
+      name: 'John Doe',
+      role: 'Resident Care Coordinator',
+      image: 'femaleNurse.png',
+      description: 'Organizes care plans and collaborates closely with families to ensure the highest standard of care.'
+    },
   ];
 }
