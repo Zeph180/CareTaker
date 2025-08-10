@@ -1,9 +1,0 @@
-{
-  "routes": {
-    "/CareTaker": {},
-    "/CareTaker/about": {},
-    "/CareTaker/amenities": {},
-    "/CareTaker/contact-us": {},
-    "/CareTaker/services": {}
-  }
-}
