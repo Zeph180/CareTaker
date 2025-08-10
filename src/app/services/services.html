@@ -1,122 +1,83 @@
 <main>
+  <!-- Hero Section -->
   <section class="page-hero">
+    <div class="hero-overlay"></div>
     <div class="container">
       <h1 class="page-title">Services</h1>
-      <p class="page-subtitle">Quality care & compassionate services for your loved ones</p>
     </div>
   </section>
 
-  <!-- Services list (two-column style: description + offerings) -->
+  <!-- Services List -->
   <section class="services-list">
     <div class="container">
-      <div class="service-text">
-        <h2>Resident Care</h2>
-        <p>Personalized daily care plans, medication support and 24/7 supervision to keep residents safe and
-          comfortable.</p>
-      </div>
-      <div class="service-offerings">
-        <h4>Service Offerings</h4>
-        <ul>
-          <li>Assisted living</li>
-          <li>Medication management</li>
-          <li>Personal care</li>
-        </ul>
-      </div>
-    </div>
+      @for (service of services; track service; let i = $index) {
+        <div class="service-section">
+          <div class="service-grid" [class.reverse]="i % 2 === 1">
+            <div class="service-content">
+              <h2 class="service-title">{{ service.title }}</h2>
+              <p class="service-description">{{ service.description }}</p>
 
-    <div class="service">
-      <div class="service-text">
-        <h2>Elderly Nutrition</h2>
-        <p>Tailored nutrition programs prepared by trained staff to meet special dietary needs and promote wellness.
-        </p>
-      </div>
-      <div class="service-offerings">
-        <h4>Service Offerings</h4>
-        <ul>
-          <li>Special diets</li>
-          <li>Meal planning</li>
-          <li>Hydration monitoring</li>
-        </ul>
-      </div>
-    </div>
+              <div class="service-details-section">
+                <h3 class="service-details-title">Service Details</h3>
+                <p class="service-details">{{ service.details }}</p>
+              </div>
+            </div>
 
-    <div class="service">
-      <div class="service-text">
-        <h2>Skilled Nursing</h2>
-        <p>Clinical nursing support for residents recovering from surgery or living with chronic conditions.</p>
-      </div>
-      <div class="service-offerings">
-        <h4>Service Offerings</h4>
-        <ul>
-          <li>Wound care</li>
-          <li>IV therapy</li>
-          <li>Clinical monitoring</li>
-        </ul>
-      </div>
-    </div>
+            <div class="service-offerings">
+              <h3 class="offerings-title">Service Offerings</h3>
+              <ul class="offerings-list">
+                @for (offering of service.offerings; track offering) {
+                  <li class="offering-item">
+                    <span class="bullet">•</span>
+                    {{ offering }}
+                  </li>
+                }
+              </ul>
+            </div>
+          </div>
+        </div>
+      }
 
-    <div class="service">
-      <div class="service-text">
-        <h2>Caring Staff</h2>
-        <p>Compassionate, trained caregivers who focus on dignity and comfort for every resident.</p>
-      </div>
-      <div class="service-offerings">
-        <h4>Service Offerings</h4>
-        <ul>
-          <li>24/7 caregiving</li>
-          <li>Continuous training</li>
-          <li>Family liaison</li>
-        </ul>
+    </div>
+  </section>
+
+  <!-- Dietary Services -->
+  <section class="dietary-section">
+    <div class="container">
+      <h2 class="section-title">Dietary Services</h2>
+      <div class="dietary-grid">
+        @for (meal of dietaryServices; track meal) {
+          <div class="meal-card">
+            <div class="meal-image">
+              <img [src]="'assets/' + meal.image" [alt]="meal.title" class="meal-img">
+            </div>
+            <div class="meal-content">
+              <h3 class="meal-title">{{ meal.title }}</h3>
+              <p class="meal-description">{{ meal.description }}</p>
+            </div>
+          </div>
+        }
       </div>
     </div>
   </section>
 
-  <!-- Dietary services cards -->
-  <section class="dietary">
-    <h2>Dietary Services</h2>
-    <div class="cards">
-      <article class="card">
-        <img src="assets/diet1.jpg" alt="Healthy meal">
-        <h3>Healthy Meals</h3>
-        <p>Chef-prepared meals with fresh ingredients and balanced nutrition.</p>
-      </article>
-      <article class="card">
-        <img src="assets/diet2.jpg" alt="Balanced diet">
-        <h3>Balanced Diet</h3>
-        <p>Menus adapted to medical and personal dietary needs.</p>
-      </article>
-      <article class="card">
-        <img src="assets/diet3.jpg" alt="Nutritious foods">
-        <h3>Nutritious Foods</h3>
-        <p>Seasonal menus that promote appetite and wellness.</p>
-      </article>
-    </div>
-  </section>
-
-  <!-- Recreational and social activities -->
-  <section class="recreation">
-    <h2>Recreational and Social Activities</h2>
-    <div class="cards">
-      <article class="card">
-        <img src="assets/activity1.jpg" alt="Yoga">
-        <h3>Yoga & Stretching</h3>
-        <p>Gentle classes to maintain mobility and reduce stress.</p>
-      </article>
-      <article class="card">
-        <img src="assets/activity2.jpg" alt="Games">
-        <h3>Games & Social Clubs</h3>
-        <p>Group games and clubs to keep minds active and connections strong.</p>
-      </article>
-      <article class="card">
-        <img src="assets/activity3.jpg" alt="Outdoor">
-        <h3>Outdoor Events</h3>
-        <p>Garden walks and community outings for fresh air and socializing.</p>
-      </article>
-      <article class="card">
-        <img src="assets/activity4.jpg" alt="Crafts">
-        <h3>Arts & Crafts</h3>
-        <p>Creative sessions for expression and fun.</p>
-      </article>
+  <!-- Activities -->
+  <section class="activities-section">
+    <div class="container">
+      <h2 class="section-title">Recreational and Social Activities</h2>
+      <div class="activities-grid">
+        @for (activity of activities; track activity) {
+          <div class="activity-card">
+            <div class="activity-image">
+              <img [src]="'assets/' + activity.image" [alt]="activity.title" class="activity-img">
+            </div>
+            <div class="activity-overlay">
+              <h3 class="activity-title">{{ activity.title }}</h3>
+              <p class="activity-description">{{ activity.description }}</p>
+            </div>
+          </div>
+        }
+      </div>
     </div>
   </section>
 </main>
