@@ -1,4 +1,4 @@
-﻿[build]
+[build]
   command = "ng build --configuration production"
   publish = "dist/care-taker/browser"
 
