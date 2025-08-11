@@ -1,1 +1,83 @@
-<p>services works!</p>
+<main>
+  <!-- Hero Section -->
+  <section class="page-hero">
+    <div class="hero-overlay"></div>
+    <div class="container">
+      <h1 class="page-title">Services</h1>
+    </div>
+  </section>
+
+  <!-- Services List -->
+  <section class="services-list">
+    <div class="container">
+      @for (service of services; track service; let i = $index) {
+        <div class="service-section">
+          <div class="service-grid" [class.reverse]="i % 2 === 1">
+            <div class="service-content">
+              <h2 class="service-title">{{ service.title }}</h2>
+              <p class="service-description">{{ service.description }}</p>
+
+              <div class="service-details-section">
+                <h3 class="service-details-title">Service Details</h3>
+                <p class="service-details">{{ service.details }}</p>
+              </div>
+            </div>
+
+            <div class="service-offerings">
+              <h3 class="offerings-title">Service Offerings</h3>
+              <ul class="offerings-list">
+                @for (offering of service.offerings; track offering) {
+                  <li class="offering-item">
+                    <span class="bullet">•</span>
+                    {{ offering }}
+                  </li>
+                }
+              </ul>
+            </div>
+          </div>
+        </div>
+      }
+
+    </div>
+  </section>
+
+  <!-- Dietary Services -->
+  <section class="dietary-section">
+    <div class="container">
+      <h2 class="section-title">Dietary Services</h2>
+      <div class="dietary-grid">
+        @for (meal of dietaryServices; track meal) {
+          <div class="meal-card">
+            <div class="meal-image">
+              <img [src]="'assets/' + meal.image" [alt]="meal.title" class="meal-img">
+            </div>
+            <div class="meal-content">
+              <h3 class="meal-title">{{ meal.title }}</h3>
+              <p class="meal-description">{{ meal.description }}</p>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Activities -->
+  <section class="activities-section">
+    <div class="container">
+      <h2 class="section-title">Recreational and Social Activities</h2>
+      <div class="activities-grid">
+        @for (activity of activities; track activity) {
+          <div class="activity-card">
+            <div class="activity-image">
+              <img [src]="'assets/' + activity.image" [alt]="activity.title" class="activity-img">
+            </div>
+            <div class="activity-overlay">
+              <h3 class="activity-title">{{ activity.title }}</h3>
+              <p class="activity-description">{{ activity.description }}</p>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+</main>
