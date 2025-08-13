@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build --configuration production",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "serve:ssr:care-taker": "node dist/care-taker/server/server.mjs"
@@ -31,6 +31,7 @@
     "@angular/platform-server": "^20.1.0",
     "@angular/router": "^20.1.0",
     "@angular/ssr": "^20.1.4",
+    "@netlify/functions": "^4.2.1",
     "express": "^5.1.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0"
@@ -39,7 +40,7 @@
     "@angular/build": "^20.1.4",
     "@angular/cli": "^20.1.4",
     "@angular/compiler-cli": "^20.1.0",
-    "@netlify/angular-runtime": "^2.2.0",
+    "@netlify/angular-runtime": "^2.4.0",
     "@types/express": "^5.0.1",
     "@types/jasmine": "~5.1.0",
     "@types/node": "^20.17.19",
