@@ -27,7 +27,7 @@ export class Footer {
     { icon: 'facebook', url: '#' },
     { icon: 'x', url: '#' },
     { icon: 'instagram', url: '#' },
-    { icon: 'linkedin', url: '#' }
+    { icon: 'linkedin-square', url: '#' }
   ];
   protected readonly literalMap = literalMap;
 }
