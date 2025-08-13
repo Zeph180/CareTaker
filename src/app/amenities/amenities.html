@@ -77,7 +77,9 @@
             @for (service of accessibility; track service) {
             <div class="service-card">
                 <div class="service-icon">
-                    <img [src]="'assets/' + service.icon" [alt]="service.title">
+<!--                    <img [src]="'assets/' + service.icon" [alt]="service.title">-->
+                  <i [class]="'fas fa-'+service.icon" aria-hidden="true"></i>
+<!--                  <i class="fas fa-chevron-left"></i>-->
                 </div>
                 <h3 class="service-title">{{ service.title }}</h3>
                 <p class="service-description">{{ service.description }}</p>

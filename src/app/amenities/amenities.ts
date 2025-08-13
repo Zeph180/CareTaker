@@ -49,18 +49,18 @@ export class Amenities {
 
   accessibility = [
     {
-      icon: 'houseIcon.svg',
-      title: 'Accessibility Features #1',
+      icon: 'sign-language',
+      title: 'Sign Language',
       description: 'Personalized daily assistance in a warm, homelike environment. From grooming to companionship, we ensure every resident feels valued and cared for.'
     },
     {
-      icon: 'houseIcon.svg',
-      title: 'Accessibility Features #2',
+      icon: 'blind',
+      title: 'Blind Access',
       description: 'Nutritious, chef-prepared meals tailored to individual health needs, promoting wellness, energy, and enjoyment at every mealtime.'
     },
     {
-      icon: 'houseIcon.svg',
-      title: 'Accessibility Features #3',
+      icon: 'wheelchair',
+      title: 'Wheelchair Access',
       description: 'Professional medical support delivered with compassion, ensuring residents receive expert care for both short-term recovery and long-term health.'
     }
   ];

@@ -15,7 +15,7 @@
         <div class="social-links">
           @for (social of socialLinks; track social) {
             <a [href]="social.url" class="social-link">
-              <li class="icon-{{social.icon}}"></li>
+              <i [class]="'fa fa-' + social.icon" aria-hidden="true"></i>
             </a>
           }
         </div>

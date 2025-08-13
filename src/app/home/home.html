@@ -18,16 +18,13 @@
           <img src="assets/about.png" alt="Care giver with elderly patient">
         </div>
         <div class="about-content">
-          <h2 class="section-title">About Us</h2>
+          <h2 class="section-title">The Best Elderly Care Center For You</h2>
           <p class="about-text">
-            Lorem ipsum dolor sit amet consectetur. Augue non molestudis placerat faucibus nam purus sem. Urna purus porttitor dignissim congue pellentesque ac hac.
-          </p>
-          <ul class="about-features">
-            <li>Quality care with personalized attention</li>
-            <li>Quality care with personalized attention</li>
-            <li>Quality care with personalized attention</li>
-            <li>Supporting peace of mind in care and freedom of choice</li>
-          </ul>
+            At <b>Quin’s Care</b>, we believe seniors deserve more than just care — they deserve comfort,
+            dignity, and a true sense of belonging. Our warm, welcoming center offers personalized support,
+            from daily assistance and medical care to friendly companionship and engaging activities.
+            With professionalism, compassion, and a genuine passion for elder care,
+            we ensure your <b> loved one’s comfort, safety, and happiness </b> every day.          </p>
           <button class="learn-more-btn">Learn More</button>
         </div>
       </div>
@@ -43,6 +40,7 @@
           <div class="service-card">
             <div class="service-icon">
               <i class="icon-{{ service.icon }}"></i>
+              <i [class]="'fa fa-'+ service.icon" aria-hidden="true"></i>
             </div>
             <h3 class="service-title">{{ service.title }}</h3>
             <p class="service-description">{{ service.description }}</p>
@@ -52,24 +50,52 @@
     </div>
   </section>
 
-  <!-- Reviews Section -->
   <section class="reviews-section">
     <div class="container">
       <h2 class="section-title centered">Client Reviews</h2>
       <div class="reviews-container">
-        @for (review of reviews; track review) {
-          <div class="review-card">
+        <div class="carousel-wrapper">
+          <!-- Navigation Buttons -->
+          <button
+            class="nav-button prev-button"
+            (click)="prevReview()"
+            [disabled]="reviews.length <= 1">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+
+          <button
+            class="nav-button next-button"
+            (click)="nextReview()"
+            [disabled]="reviews.length <= 1">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+
+          <!-- Review Card -->
+          <div
+            class="review-card"
+            (mouseenter)="onMouseEnter()"
+            (mouseleave)="onMouseLeave()">
             <div class="quote-icon">"</div>
-            <p class="review-text">{{review.text}}</p>
+            <p class="review-text">{{ currentReview.text }}</p>
             <div class="review-author">
-              <img src="assets/author.png" alt="Author" class="author-avatar">
               <div class="author-info">
-                <h4 class="author-name">{{ review.author }}</h4>
-                <p class="author-role">{{ review.role }}</p>
+                <h4 class="author-name">{{ currentReview.author }}</h4>
+                <p class="author-role">{{ currentReview.role }}</p>
               </div>
             </div>
           </div>
-        }
+        </div>
+
+        <!-- Dots Indicator -->
+        <div class="dots-container">
+          @for (review of reviews; track review; let i = $index) {
+            <button
+              class="dot"
+              [class.active]="i === currentReviewIndex"
+              (click)="currentReviewIndex = i">
+            </button>
+          }
+        </div>
       </div>
     </div>
   </section>
@@ -79,15 +105,16 @@
     <div class="container">
       <div class="cta-grid">
         <div class="cta-content">
-          <h2 class="cta-title">The Best Elderly Care Center For You</h2>
+          <h2 class="cta-title">Compassionate Care, Comfortable Living</h2>
           <p class="cta-text">
-            At <b>Quin’s Care</b>, we believe seniors deserve more than just care — they deserve comfort,
-            dignity, and a true sense of belonging. Our warm, welcoming center offers personalized support,
-            from daily assistance and medical care to friendly companionship and engaging activities.
-            With professionalism, compassion, and a genuine passion for elder care,
-            we ensure your <b> loved one’s comfort, safety, and happiness </b> every day.
+            At <b>Quin’s Care</b>, we go beyond meeting daily needs. We create a safe,
+            nurturing environment where seniors feel valued, respected, and at home.
+            From professional medical support and daily assistance to joyful
+            activities and meaningful companionship, we focus on every detail that brings
+            <b>comfort, dignity, and happiness</b>. With our dedicated team by their side,
+            your loved one can enjoy each day with confidence, peace, and a true sense of belonging.
           </p>
-          <button class="cta-btn">Learn More</button>
+<!--          <button class="cta-btn">Learn More</button>-->
         </div>
         <div class="cta-image">
           <img src="assets/cta-image.png" alt="Elderly care">
