@@ -44,7 +44,7 @@
   <!-- Dietary Services -->
   <section class="dietary-section">
     <div class="container">
-      <h2 class="section-title">Dietary Services</h2>
+      <h2 class="section-title">Other Services</h2>
       <div class="dietary-grid">
         @for (meal of dietaryServices; track meal) {
           <div class="meal-card">
@@ -69,7 +69,7 @@
         @for (activity of activities; track activity) {
           <div class="activity-card">
             <div class="activity-image">
-              <img [src]="'assets/' + activity.image" [alt]="activity.title" class="activity-img">
+              <img [src]="'assets/' + activity.image" [alt]="activity.title" class="activity-img" />
             </div>
             <div class="activity-overlay">
               <h3 class="activity-title">{{ activity.title }}</h3>

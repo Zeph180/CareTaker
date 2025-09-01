@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {ChangeDetectorRef, Component, OnDestroy, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-home',
@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
   standalone: true,
   styleUrl: './home.css'
 })
-export class Home {
+export class Home implements OnInit, OnDestroy {
   currentReviewIndex = 0;
   autoSlideInterval: any;
   isHovered = false;
@@ -28,7 +28,13 @@ export class Home {
       description: 'Professional medical support delivered with compassion, ensuring residents receive expert care for both short-term recovery and long-term health.'
     }
   ];
-
+  carouselImages: string[] = [
+    '/assets/hero1.jpg',
+    '/assets/hero2.jpg',
+    '/assets/hero3.jpg',
+    '/assets/gardens.jpg',
+    '/assets/oldSit.jpg'
+  ];
   reviews = [
     {
       text: 'We had the pleasure of working with Quinn’s Care bridge as our full-time caregiving Agency and we met  ' +
@@ -101,8 +107,13 @@ export class Home {
     }
   ];
 
+  currentIndex = 0;
+  intervalId: any;
+
+  constructor(private cdr: ChangeDetectorRef) { }
 
   ngOnInit() {
+    this.startAutoSlideHero();
     this.startAutoSlide();
   }
 
@@ -112,10 +123,32 @@ export class Home {
 
   startAutoSlide() {
     this.autoSlideInterval = setInterval(() => {
-      if (!this.isHovered) {
         this.nextReview();
-      }
+      this.cdr.detectChanges()
     }, 5000); // Change every 5 seconds
+  }
+
+  startAutoSlideHero() {
+    if (this.intervalId) {
+      clearInterval(this.intervalId);
+    }
+    this.intervalId = setInterval(() => {
+      this.nextSlide();
+      this.cdr.detectChanges(); // Manually trigger change detection
+    }, 5000);
+  }
+
+  nextSlide(): void {
+    this.currentIndex = (this.currentIndex + 1) % this.carouselImages.length;
+  }
+
+  goToSlide(index: number): void {
+    this.currentIndex = index;
+  }
+
+  prevSlide(): void {
+    this.currentIndex =
+      (this.currentIndex - 1 + this.carouselImages.length) % this.carouselImages.length;
   }
 
   stopAutoSlide() {
