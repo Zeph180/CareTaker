@@ -20,7 +20,7 @@ export class Header {
     { label: 'Home', route: '/', active: true },
     { label: 'About Us', route: '/about' },
     { label: 'Services', route: '/services' },
-    { label: 'Amenities', route: '/amenities' },
+    // { label: 'Amenities', route: '/amenities' },
     { label: 'Contact Us', route: '/contact-us' }
   ];
 
