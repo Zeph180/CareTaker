@@ -1,6 +1,81 @@
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  color: white;
+  margin-top: 80px;
+  overflow: hidden;
+}
+
+.carousel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.carousel-image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.carousel-image.active {
+  opacity: 1;
+}
+
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
+  z-index: 2;
+}
+
+.container,
+.hero-content {
+  position: relative;
+  z-index: 3;
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+.hero-btn {
+  background: #48bb78;
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 0.375rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.hero-btn:hover {
+  background: #38a169;
+}
+
 /* Reviews Section */
 .reviews-section {
-  padding: 5rem 0;
+  padding: 5rem 1rem;
   background: #edf2f7;
 }
 
@@ -12,30 +87,35 @@
 
 .carousel-wrapper {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
 }
 
 .review-card {
   background: white;
-  padding: 2.5rem;
-  border-radius: 0.5rem;
+  padding: 1.5rem 1.5rem;
+  border-radius: 0.75rem;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  max-width: 700px;
+  width: 100%;
   position: relative;
   margin-bottom: 2rem;
-  flex: 1;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
-  &:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-  }
+.review-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
 .quote-icon {
   font-size: 4rem;
   color: #48bb78;
   position: absolute;
-  top: -10px;
-  left: 2rem;
+  top: -20px;
+  left: 1.5rem;
   line-height: 1;
 }
 
@@ -45,7 +125,7 @@
   margin-bottom: 2rem;
   font-style: italic;
   padding-top: 1rem;
-  line-height: 1.6;
+  line-height: 1.8;
 }
 
 .review-author {
@@ -54,15 +134,8 @@
   gap: 1rem;
 }
 
-.author-avatar {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  object-fit: cover;
-}
-
 .author-name {
-  font-weight: 600;
+  font-weight: 700;
   color: #2d3748;
   margin-bottom: 0.25rem;
 }
@@ -72,72 +145,56 @@
   font-size: 0.9rem;
 }
 
+
 /* Navigation Buttons */
-.nav-button {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  border: 2px solid #48bb78;
-  background: white;
-  color: #48bb78;
-  font-size: 1.2rem;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+.nav-btn {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  z-index: 10;
-
-  &:hover:not(:disabled) {
-    background: #48bb78;
-    color: white;
-    transform: translateY(-50%) scale(1.1);
-  }
-
-  &:disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
-  }
+  background-color: rgba(255, 255, 255, 0.3);
+  border: none;
+  padding: 1rem;
+  cursor: pointer;
+  font-size: 2rem;
+  color: white;
+  z-index: 3;
+  transition: background-color 0.3s ease;
 }
 
-.prev-button {
-  left: -25px;
+.nav-btn:hover {
+  background-color: rgba(255, 255, 255, 0.5);
 }
 
-.next-button {
-  right: -25px;
+.nav-btn.prev {
+  left: 20px;
 }
 
-/* Dots Indicator */
-.dots-container {
+.nav-btn.next {
+  right: 20px;
+}
+
+.dots {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
-  justify-content: center;
-  gap: 0.5rem;
-  margin-top: 1rem;
+  gap: 10px;
+  z-index: 3;
 }
 
 .dot {
-  width: 12px;
   height: 12px;
+  width: 12px;
+  background-color: rgba(255, 255, 255, 0.5);
   border-radius: 50%;
-  border: none;
-  background: #cbd5e0;
+  display: inline-block;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: background-color 0.3s ease;
+}
 
-  &.active {
-    background: #48bb78;
-    transform: scale(1.2);
-  }
-
-  &:hover {
-    background: #48bb78;
-    opacity: 0.7;
-  }
+.dot.active {
+  background-color: #48bb78;
 }
 
 /* Responsive Design */

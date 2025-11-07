@@ -1,10 +1,37 @@
 <main>
-  <!-- Hero Section -->
   <section class="hero">
+    <div class="carousel">
+      @for (img of carouselImages; track img; let i = $index) {
+        <img
+          [src]="img"
+          class="carousel-image"
+          [class.active]="i === currentIndex"
+          alt="Hero Carousel Image"
+        />
+      }
+
+      <div class="overlay"></div>
+
+      <!-- Navigation Buttons -->
+      <button class="nav-btn prev" (click)="prevSlide()">❮</button>
+      <button class="nav-btn next" (click)="nextSlide()">❯</button>
+
+      <!-- Pagination Dots -->
+      <div class="dots">
+        @for (img of carouselImages; track img; let i = $index) {
+          <span
+            class="dot"
+            [class.active]="i === currentIndex"
+            (click)="goToSlide(i)"
+          ></span>
+        }
+      </div>
+    </div>
+
     <div class="container">
       <div class="hero-content">
         <h1 class="hero-title">Comfort & Care, Just Like Home</h1>
-        <p class="hero-subtitle">Where compassion, dignity, and safety come first for your loved ones.</p>
+        <p class="hero-subtitle">Connecting people with Care</p>
         <button class="hero-btn">Get Started</button>
       </div>
     </div>
@@ -15,7 +42,7 @@
     <div class="container">
       <div class="about-grid">
         <div class="about-image">
-          <img src="assets/about.png" alt="Care giver with elderly patient">
+          <img src="assets/conversation.jpg" alt="Care giver with elderly patient">
         </div>
         <div class="about-content">
           <h2 class="section-title">The Best Elderly Care Center For You</h2>
@@ -53,29 +80,20 @@
   <section class="reviews-section">
     <div class="container">
       <h2 class="section-title centered">Client Reviews</h2>
+
       <div class="reviews-container">
+        <!-- Review Carousel Wrapper -->
         <div class="carousel-wrapper">
           <!-- Navigation Buttons -->
-          <button
-            class="nav-button prev-button"
-            (click)="prevReview()"
-            [disabled]="reviews.length <= 1">
-            <i class="fas fa-chevron-left"></i>
-          </button>
+          <button class="nav-btn prev" (click)="prevReview()" [disabled]="reviews.length <= 1">❮</button>
+          <button class="nav-btn next" (click)="nextReview()" [disabled]="reviews.length <= 1">❯</button>
 
-          <button
-            class="nav-button next-button"
-            (click)="nextReview()"
-            [disabled]="reviews.length <= 1">
-            <i class="fas fa-chevron-right"></i>
-          </button>
-
-          <!-- Review Card -->
+          <!-- Review Slide -->
           <div
             class="review-card"
             (mouseenter)="onMouseEnter()"
             (mouseleave)="onMouseLeave()">
-            <div class="quote-icon">"</div>
+            <div class="quote-icon">“</div>
             <p class="review-text">{{ currentReview.text }}</p>
             <div class="review-author">
               <div class="author-info">
@@ -84,17 +102,17 @@
               </div>
             </div>
           </div>
-        </div>
 
-        <!-- Dots Indicator -->
-        <div class="dots-container">
-          @for (review of reviews; track review; let i = $index) {
-            <button
-              class="dot"
-              [class.active]="i === currentReviewIndex"
-              (click)="currentReviewIndex = i">
-            </button>
-          }
+          <!-- Dots -->
+          <div class="dots">
+            @for (review of reviews; track review.author; let i = $index) {
+              <span
+                class="dot"
+                [class.active]="i === currentReviewIndex"
+                (click)="currentReviewIndex = i"
+              ></span>
+            }
+          </div>
         </div>
       </div>
     </div>
@@ -114,7 +132,6 @@
             <b>comfort, dignity, and happiness</b>. With our dedicated team by their side,
             your loved one can enjoy each day with confidence, peace, and a true sense of belonging.
           </p>
-<!--          <button class="cta-btn">Learn More</button>-->
         </div>
         <div class="cta-image">
           <img src="assets/cta-image.png" alt="Elderly care">
